@@ -1,0 +1,34 @@
+.new-tweet {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.counter{
+  justify-content: space-between;
+  position: relative;
+  align-self: right;
+  float: right;
+}
+
+textarea {
+  display: block;
+  justify-content: space-between;
+  border: none;
+  border-bottom: solid;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.submit{
+  background-color: rgba(0, 0, 0, 0.523);
+  color: #ffffff;
+}
+
+.new-tweet div {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee';
+}
