@@ -1,16 +1,14 @@
 .new-tweet {
   display: flex;
-  justify-content: center;
-  align-items: left;
   flex-wrap: wrap;
   flex-direction: column;
+  font-family: “Source Sans Pro” , sans-serif;
 }
 
 .counter{
-  justify-content: space-between;
+  display: flex;
   position: relative;
-  align-self: right;
-  float: right;
+  left: 0;
 }
 
 textarea {
@@ -25,6 +23,7 @@ textarea {
 .submit{
   background-color: rgba(0, 0, 0, 0.523);
   color: #ffffff;
+  font-family: "Bungee";
 }
 
 .new-tweet div {
