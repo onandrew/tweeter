@@ -29,7 +29,5 @@ body {
 
  .container {
   width: 90%;
-  align-items: center;
-  display: flex;
   background-color: #f4f1ec ;
  }
