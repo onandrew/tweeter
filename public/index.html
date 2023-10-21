@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css"/>
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
@@ -49,7 +50,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="post">
+        <form action="/tweets" id="submitForm" method="post">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
@@ -58,8 +59,8 @@
           </div>
         </form>
       </section>  
-      <section class="tweet-container">
-        <article class="tweet">
+      <section id="tweet-container">
+        <!-- <article class="tweet">
           <header>
             <div class="realname">Newton</div>
             <div class="tweetID">@SirIsaac</div>
@@ -70,7 +71,7 @@
             <i class="fa-solid fa-retweet"></i>
             <i class="fa-solid fa-heart"></i>
           </footer>
-        </article>
+        </article> -->
       </section>
     </main>
   </body>
