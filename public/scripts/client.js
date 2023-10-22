@@ -61,14 +61,20 @@ const createTweetElement = function (tweetObject) {
   `
   return newTweet;
 };
-
 renderTweets(data);
+const loadTweets = function () {
+  $.ajax('/tweets', { method: 'GET' })
+  .then(function(tweets) {
+    renderTweets(tweets);
+  });
+ };
 
-
+ loadTweets();
+ 
 const submitTweet = $('#submitForm');
 submitTweet.on('submit', function(event) {
   const data = $('#submitForm').serialize();
   event.preventDefault();
   $.ajax(data, {method: 'POST'})
-});
+  });
 });
