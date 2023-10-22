@@ -52,6 +52,7 @@ const createTweetElement = function (tweetObject) {
   <footer class = "newTweetFoot">
     <div>
       <span>${tweetObject.created_at}</span>
+      <span class="tweet-date">${timeago.format(tweetObject.created_at)}</span>
     </div>
     <div> 
       <span> <i class="fas fa-flag"> </i> <i class="fas fa-retweet"> </i> <i class="fas fa-heart"> </i> </span>
@@ -61,6 +62,7 @@ const createTweetElement = function (tweetObject) {
   `
   return newTweet;
 };
+
 renderTweets(data);
 const loadTweets = function () {
   $.ajax('/tweets', { method: 'GET' })

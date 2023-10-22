@@ -6,12 +6,12 @@
 }
 
 .counter{
-  display: flex;
+  display: block;
   left: 0;
 }
 
 textarea {
-  display: block;
+  display: inline;
   justify-content: space-between;
   border: none;
   border-bottom: solid;
