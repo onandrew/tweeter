@@ -1,46 +1,46 @@
-.tweet{
-  margin: 120px auto;
-  padding: 15px;
+article.tweet {
+  margin: 1em 0;
+  padding: 1em;
   border: 4px solid #545
 }
 
 .tweet header, .tweet footer{
-  display: block;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0em .3em;
 } 
 
-.tweet footer{
-  margin-top: 45px;
+.tweet header div {
+  display: flex;
+  align-items: center;
+}
+
+.tweet header div img {
+  margin-right: 0.5em;
+}
+
+.tweet footer {
+  margin-top: 1em;
   border-top: 4px solid #545149;
 }
 
-article:hover {
-  box-shadow: 5px 10px;
-  color: black
+.tweet footer div {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.tweetID{
-  float: right;
-  color: blue;
+.tweet footer div i {
+  color: #4056A1;
 }
 
-
-article i{
-float: right;
-}
-
-article i:hover {
+.tweet footer div i:hover {
   color: red;
 }
 
-.realname{
-  margin-bottom: 15px;
-  font-family: 'Source Sans Pro';
-  font-size: 120%;
+
+article:hover {
+  box-shadow: 4px 4px;
+  color: black
 }
 
-.tweetcontent{
-  font-family: 'Source Sans Pro';
-}

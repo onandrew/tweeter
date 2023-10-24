@@ -1,14 +1,28 @@
-.head1 {
+.header {
   height: 400px;
   width: 100%;
-  align-items: center;
-  justify-content: center;
   background-color: #008c70;
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
-  display:block;
   margin-top: 120px;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
 }
 
-.head1 .name h2 {
-  color: coral;
+.header-avatar {
+  max-width: 200px;
+}
+
+.header-avatar img {
+  width: 100%;
+}
+
+.header-name {
+  font-size: 1.2em;
 }
