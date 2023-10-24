@@ -31,17 +31,24 @@ const data = [
 ]
 
 $(document).ready(function () {
+
+  const escape = function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   const createTweetElement = function (tweetObject) {
     const newTweet = ` <article class= "tweet"> 
     <header>
       <div>
         <img src = ${tweetObject.user.avatars}/>
-        <span> ${tweetObject.user.name} </span>
+        <span> ${escape(tweetObject.user.name)} </span>
       </div>
-      <p>${tweetObject.user.handle}</p>
+      <p>${escape(tweetObject.user.handle)}</p>
     </header>
       <div>
-        <p>${tweetObject.content.text}</p>
+        <p>${escape(tweetObject.content.text)}</p>
       </div>
     <footer>
       <p class="tweet-date">${timeago.format(tweetObject.created_at)}</p>
@@ -107,9 +114,3 @@ $(document).ready(function () {
 
   loadTweets();
 });
-
-const escape = function(str) {
-  let div = document.createElement('div');
-  div.appendChild(document.createTextNode(str));
-  return div.innerHTML;
-};
