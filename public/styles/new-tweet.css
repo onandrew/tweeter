@@ -31,3 +31,14 @@
   background-color: #4056A1;
   color: #ffffff;
 }
+
+.error-message {
+  margin-top: 1em;
+  padding: 1em;
+  border: 2px solid black;
+  border-spacing: 2px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  color: red;
+}

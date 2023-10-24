@@ -78,25 +78,23 @@ $(document).ready(function () {
     });
   };
 
-  const errorMessage = function (message) {
-    $('#submit-tweet').prepend(
-      $("<span class='error'>")
-        .text(message)
-    )
-  };
+  $(".error-message").hide();
 
   $('#submitForm').on('submit', function (event) {
     event.preventDefault();
 
+    $(".error-message").slideUp();
+
     const userInput = $('#tweet-text').val();
 
     if (userInput === '' || null) {
-      errorMessage('You cannot post a blank tweet');
+      $('.error-message').slideDown();
+      $('.error-message').text("Your tweet cannot be blank!")
       return;
     }
 
     if (userInput.length > 140) {
-      errorMessage('Please make sure your tweet is under 140 characters!');
+      $('.error-message').slideDown().text('Please make sure your tweet is under 140 characters!');
       return;
     }
 
