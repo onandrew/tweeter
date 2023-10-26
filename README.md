@@ -3,11 +3,21 @@
 Tweeter is a simple, single-page Twitter clone.
 
 ## Tweeter in Action
- 
- ![](image.png)
+![](tweeter1.png)
+![](tweeter2.png)
+![](tweeter3.png) 
 
 
+## Stacks
 
+This project uses HTML, CSS, JS, jQuery and AJAX on the front-end and  Node and Express on the back-end
+
+
+## Features
+
+- Can post tweets as long as it is not blank or over 140 charactes
+- Can review previous tweets posted sorted by most recent
+- Responsive design if not viewing on a desktop
 
 ## Getting Started
 
