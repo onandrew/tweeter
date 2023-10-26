@@ -32,3 +32,19 @@ body {
   margin: auto;
   background-color: #f4f1ec ;
  }
+
+ @media only screen and (min-width:1024px) {
+  
+  .header {
+    width: 30%;
+    margin: 10vh 5% 0;;
+    padding-top: 1em;
+    float: left;
+  }
+
+  main.container {
+    width: 50%;
+    float: right;
+  }
+
+ }
