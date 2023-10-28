@@ -29,7 +29,7 @@ $(document).ready(function () {
         <p>${escape(tweetObject.content.text)}</p>
       </div>
     <footer>
-      <p class="tweet-date">${timeago.format(tweetObject.created_at)}</p>
+      <p class="tweet-date">${timeago.format(tweetObject.created_at)}</p> 
       <div> 
         <i class="fas fa-flag"></i>
         <i class="fas fa-retweet"></i>
@@ -43,7 +43,7 @@ $(document).ready(function () {
 
   const renderTweets = function (tweetsArray) {
     for (let tweet of tweetsArray) {
-      $('#tweets-container').prepend(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet)); //prepends new tweets to the top of the page
     }
   }
 
@@ -85,12 +85,11 @@ $(document).ready(function () {
       method: 'POST',
       success: () => {
         loadTweets();
-        $textArea.val(""); // clear textarea
-        $('.counter').text('140'); // reset counter to 140
+        $textArea.val(""); // clears textarea after successful post
+        $('.counter').text('140'); // reset counter to 140 after successful post
       },
       error: (error) => console.error(error)
     });
   });
-
   loadTweets();
 });
