@@ -42,3 +42,9 @@
   font-weight: bold;
   color: red;
 }
+
+@media only screen and (min-width:1024px) {
+  .new-tweet {
+    width: 90%;
+  }
+}

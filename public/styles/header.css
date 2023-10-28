@@ -26,3 +26,11 @@
 .header-name {
   font-size: 1.2em;
 }
+
+@media only screen and (min-width:1024px) {
+  .header {
+    margin-top: 7em;
+    margin-left: 2em;
+    width: 500px
+  }
+}

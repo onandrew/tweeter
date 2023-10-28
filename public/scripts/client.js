@@ -4,40 +4,18 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+
 
 $(document).ready(function () {
 
+  //escape function for invalid user text
   const escape = function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
+  //function using jquery to create tweet using user info
   const createTweetElement = function (tweetObject) {
     const newTweet = ` <article class= "tweet"> 
     <header>
@@ -65,7 +43,7 @@ $(document).ready(function () {
 
   const renderTweets = function (tweetsArray) {
     for (let tweet of tweetsArray) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   }
 
@@ -78,6 +56,7 @@ $(document).ready(function () {
     });
   };
 
+  //hides error message by default
   $(".error-message").hide();
 
   $('#submitForm').on('submit', function (event) {
@@ -86,13 +65,16 @@ $(document).ready(function () {
     $(".error-message").slideUp();
 
     const userInput = $('#tweet-text').val();
+    const $textArea = $(this).children('textarea');
 
+    //checks for empty user input
     if (userInput === '' || null) {
       $('.error-message').slideDown();
       $('.error-message').text("Your tweet cannot be blank!")
       return;
     }
 
+    //checks for user entering more than allowed 140 characters
     if (userInput.length > 140) {
       $('.error-message').slideDown().text('Please make sure your tweet is under 140 characters!');
       return;
@@ -103,7 +85,7 @@ $(document).ready(function () {
       method: 'POST',
       success: () => {
         loadTweets();
-        $textArea.val(''); // clear textarea
+        $textArea.val(""); // clear textarea
         $('.counter').text('140'); // reset counter to 140
       },
       error: (error) => console.error(error)
